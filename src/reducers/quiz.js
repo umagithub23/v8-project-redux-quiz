@@ -4,24 +4,61 @@ import { createSlice } from "@reduxjs/toolkit";
 const questions = [
   {
     id: 1,
-    questionText: "Who set the Olympic record for the 100m dash in 2012?",
-    options: ["Usain Bolt", "Justin Gatlin", "Tyson Gay", "Asafa Powell"],
-    correctAnswerIndex: 0
+    questionText: "Which is the local currency in Sweden?",
+    options: [
+      "Euro (EUR)",
+      "Scandinavian Pound (SCP)",
+      "Swedish Crowns (SEK)",
+      "Swish (SWI)",
+    ],
+    correctAnswerIndex: 2,
   },
   {
     id: 2,
-    questionText:
-      "When was Michael Phelps last named male World Swimmer of the Year?",
-    options: ["2012", "2014", "2016", "2018"],
-    correctAnswerIndex: 2
-  }
+    questionText: "Who is skogens konung (king of the woods)?",
+    options: ["Troll", "Moose", "Ernst Kirchsteiger", "Cat"],
+    correctAnswerIndex: 1,
+  },
+  {
+    id: 3,
+    questionText: "What is the title of the Swedish national anthem?",
+    options: [
+      "Du unga, du vackra",
+      "Du fula, du fulla",
+      "Du ramlar, du fisar",
+      "Du gamla, du fria",
+    ],
+    correctAnswerIndex: 3,
+  },
+  {
+    id: 4,
+    questionText: "What is Kebnekaise?",
+    options: [
+      "Troll",
+      "Swedish national dish",
+      "Sweden’s highest mountain",
+      "A popular pizza in Sweden",
+    ],
+    correctAnswerIndex: 2,
+  },
+  {
+    id: 5,
+    questionText: "What do Swedes do when they meet for a fika?",
+    options: [
+      "Getting drunk",
+      "Handicrafts",
+      "Touch each other in a sensual way",
+      "Having a coffee and maybe some pastry",
+    ],
+    correctAnswerIndex: 3,
+  },
 ];
 
 const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: false
+  quizOver: false,
 };
 
 export const quiz = createSlice({
@@ -64,7 +101,7 @@ export const quiz = createSlice({
         answerIndex,
         question,
         answer: question.options[answerIndex],
-        isCorrect: question.correctAnswerIndex === answerIndex
+        isCorrect: question.correctAnswerIndex === answerIndex,
       });
     },
 
@@ -92,6 +129,6 @@ export const quiz = createSlice({
      */
     restart: () => {
       return initialState;
-    }
-  }
+    },
+  },
 });
