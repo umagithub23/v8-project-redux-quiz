@@ -6,10 +6,12 @@ import { QuizHeader } from "./QuizHeader";
 
 export const Quiz = () => {
   return (
-    <div className="quiz-wrapper">
-      <QuizHeader />
-      <CurrentQuestion />
-      <QuizSummary />
+    <div className="quiz-wrapper-outer">
+      <div className="quiz-wrapper">
+        <QuizHeader />
+        <CurrentQuestion />
+        <QuizSummary />
+      </div>
     </div>
   );
 };
