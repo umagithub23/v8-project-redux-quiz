@@ -11,7 +11,8 @@
   --box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
   --main-width-mobile: 90%;
   --main-width-desktop: 70%;
-  background-image: url("./src/assets/quiz-back-ground-image.jpg");
+  background-image: url("./quiz-back-ground-image.jpg"),
+    url("./public/assets/quiz-back-ground-image.jpg");
 }
 
 code {
