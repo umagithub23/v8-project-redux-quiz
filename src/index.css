@@ -12,7 +12,7 @@
   --main-width-mobile: 90%;
   --main-width-desktop: 70%;
   background-image: url("./quiz-back-ground-image.jpg"),
-    url("./public/assets/quiz-back-ground-image.jpg");
+    url("./assets/quiz-back-ground-image.jpg");
 }
 
 code {
