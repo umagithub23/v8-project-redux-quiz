@@ -1,26 +1,19 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { quiz } from "../reducers/quiz";
+import { quiz as quizSlicer } from "../reducers/quiz";
 
 export const CurrentQuestion = () => {
-  const question = useSelector(
-    (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
-  );
-
-  const answer = useSelector((state) =>
-    state.quiz.answers.find((a) => a.questionId === question.id)
-  );
-
-  const isQuizOver = useSelector((state) => state.quiz.quizOver);
-
+  const quiz = useSelector((state) => state.quiz);
   const dispatch = useDispatch();
 
   const [localSelectedAnswerIndex, setLocalSelectedAnswerIndex] = useState();
   const [isAnswerSubmitted, setIsAnswerSubmitted] = useState(false);
 
-  if (isQuizOver) {
+  if (quiz.quizOver) {
     return;
   }
+
+  const question = quiz.questions[quiz.currentQuestionIndex];
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>;
@@ -30,7 +23,7 @@ export const CurrentQuestion = () => {
 
   const handleSubmitClick = () => {
     dispatch(
-      quiz.actions.submitAnswer({
+      quizSlicer.actions.submitAnswer({
         questionId: question.id,
         answerIndex: localSelectedAnswerIndex,
       })
@@ -42,8 +35,12 @@ export const CurrentQuestion = () => {
   const handleNextClick = () => {
     setLocalSelectedAnswerIndex(undefined);
     setIsAnswerSubmitted(false);
-    dispatch(quiz.actions.goToNextQuestion());
+    dispatch(quizSlicer.actions.goToNextQuestion());
   };
+
+  const answer = quiz.answers.find((a) => a.questionId === question.id);
+  const isLastQuestion =
+    quiz.currentQuestionIndex + 1 === quiz.questions.length;
 
   return (
     <div className="question-wrapper">
@@ -81,7 +78,11 @@ export const CurrentQuestion = () => {
             Submit
           </button>
         )}
-        {isAnswerSubmitted && <button onClick={handleNextClick}>Next</button>}
+        {isAnswerSubmitted && (
+          <button onClick={handleNextClick}>
+            {isLastQuestion ? "Finish!" : "Next"}
+          </button>
+        )}
       </div>
     </div>
   );
