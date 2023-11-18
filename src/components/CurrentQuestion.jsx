@@ -47,19 +47,30 @@ export const CurrentQuestion = () => {
       <div className="question">
         <h3>{question.questionText}</h3>
         <section className="question-options">
-          {question.options.map((option, index) => (
-            <label key={index} htmlFor={option}>
-              <input
-                type="radio"
-                id={option}
-                value={localSelectedAnswerIndex}
-                checked={index === localSelectedAnswerIndex}
-                onChange={() => handleOptionChange(index)}
-                disabled={isAnswerSubmitted}
-              />
-              {option}
-            </label>
-          ))}
+          {question.options.map((option, index) => {
+            const isCorrect = index === question.correctAnswerIndex;
+            const isSelected = index === localSelectedAnswerIndex;
+
+            return (
+              <label
+                key={index}
+                htmlFor={option}
+                className={
+                  !answer ? "defaultbtn" : isCorrect ? "correct" : "incorrect"
+                }
+              >
+                <input
+                  type="radio"
+                  id={option}
+                  value={localSelectedAnswerIndex}
+                  checked={isSelected}
+                  onChange={() => handleOptionChange(index)}
+                  disabled={isAnswerSubmitted}
+                />
+                {option}
+              </label>
+            );
+          })}
         </section>
       </div>
       <div className="answer-feedback">

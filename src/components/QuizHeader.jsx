@@ -7,12 +7,21 @@ export const QuizHeader = () => {
     return;
   }
 
+  const totalQuestions = quiz.questions.length;
+  const answeredQuestions = quiz.currentQuestionIndex + 1;
+  // const remainingQuestions = totalQuestions - answeredQuestions;
+
+  const progressBarWidth = (answeredQuestions / totalQuestions) * 100;
+
   return (
     <div className="header-wrapper">
       <span>Question</span>
       <span className="header-question-count">
-        {quiz.currentQuestionIndex + 1} / {quiz.questions.length}
+        {answeredQuestions} / {totalQuestions}
       </span>
+      <div className="progress-bar">
+        <div className="progress-bar-fill" style={{ width: `${progressBarWidth}%` }}></div>
+      </div>
     </div>
   );
 };
