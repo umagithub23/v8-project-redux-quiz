@@ -1,16 +1,8 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/redux-quiz.svg" alt="Project Banner Image">
-  </a>
-</h1>
 
-# Redux Quiz
+Redux quiz group project
 
-Replace this readme with your own information about your project.
+This week was a group project  to build a quiz game using Redux.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## Getting Started with the Project
 
 ### Dependency Installation & Startup Development Server
 
@@ -22,16 +14,9 @@ The command below is a combination of installing dependencies, opening up the pr
 npm i && code . && npm run dev
 ```
 
-### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+ https://lovely-selkie-2c3058.netlify.app/
