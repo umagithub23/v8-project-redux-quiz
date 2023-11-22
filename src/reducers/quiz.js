@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const questions = [
   {
     id: 1,
@@ -65,7 +64,6 @@ export const quiz = createSlice({
   name: "quiz",
   initialState,
   reducers: {
-    
     submitAnswer: (state, action) => {
       const { questionId, answerIndex } = action.payload;
       const question = state.questions.find((q) => q.id === questionId);
@@ -91,7 +89,6 @@ export const quiz = createSlice({
       });
     },
 
-  
     goToNextQuestion: (state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
         state.quizOver = true;

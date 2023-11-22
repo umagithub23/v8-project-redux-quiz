@@ -19,31 +19,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 label {
   display: block;
   margin-bottom: 5px;
 }
 
 .correct {
-  border: 2px solid #4FB477;
+  border: 2px solid #4fb477;
   margin-bottom: 10px;
   padding: 10px;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 .incorrect {
-  border: 2px solid #E9190F;
+  border: 2px solid #e9190f;
   margin-bottom: 10px;
   padding: 10px;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
+
 .defaultbtn {
-  background-color: #D3C4BE;
+  background-color: #d3c4be;
   margin-bottom: 10px;
   padding: 10px;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   cursor: pointer;
 }
+
 .header-wrapper {
   display: flex;
   align-items: center;
@@ -61,13 +64,11 @@ label {
 .progress-bar-fill {
   height: 100%;
   border-radius: 5px;
-  background-color: #4caf50; 
+  background-color: #4caf50;
 }
 
 @media screen and (max-width: 600px) {
   .progress-bar {
     margin-left: 60px;
-   
   }
 }
-

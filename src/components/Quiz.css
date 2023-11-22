@@ -50,14 +50,14 @@ table {
 table {
   border-collapse: collapse;
   width: 100%;
-  table-layout:fixed;
-  
+  table-layout: fixed;
 }
-td,th{
-  overflow: hidden; 
-  text-overflow: ellipsis; 
+
+td,
+th {
+  overflow: hidden;
+  text-overflow: ellipsis;
   word-wrap: break-word;
-  
 }
 
 td,
@@ -91,9 +91,7 @@ button:hover:enabled {
 
   .quiz-wrapper {
     width: var(--main-width-mobile);
-   
   }
-  
 }
 
 @media (min-width: 641px) {
@@ -104,7 +102,7 @@ button:hover:enabled {
 
   .quiz-wrapper {
     /* width: var(--main-width-desktop); */
-    width:80%;
+    width: 80%;
   }
 }
 
@@ -118,8 +116,10 @@ button:hover:enabled {
     width: var(--main-width-desktop);
   }
 }
-@media (max-width: 360px){
-td,th{
-  font-size: x-small;
-}
+
+@media (max-width: 360px) {
+  td,
+  th {
+    font-size: x-small;
+  }
 }
