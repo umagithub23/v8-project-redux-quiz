@@ -9,8 +9,6 @@ export const QuizHeader = () => {
 
   const totalQuestions = quiz.questions.length;
   const answeredQuestions = quiz.currentQuestionIndex + 1;
-  // const remainingQuestions = totalQuestions - answeredQuestions;
-
   const progressBarWidth = (answeredQuestions / totalQuestions) * 100;
 
   return (
@@ -20,7 +18,10 @@ export const QuizHeader = () => {
         {answeredQuestions} / {totalQuestions}
       </span>
       <div className="progress-bar">
-        <div className="progress-bar-fill" style={{ width: `${progressBarWidth}%` }}></div>
+        <div
+          className="progress-bar-fill"
+          style={{ width: `${progressBarWidth}%` }}
+        ></div>
       </div>
     </div>
   );

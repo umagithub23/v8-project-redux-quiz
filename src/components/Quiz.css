@@ -50,6 +50,14 @@ table {
 table {
   border-collapse: collapse;
   width: 100%;
+  table-layout:fixed;
+  
+}
+td,th{
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  word-wrap: break-word;
+  
 }
 
 td,
@@ -75,7 +83,6 @@ button:hover:enabled {
   color: white;
 }
 
-/*https://stackoverflow.com/questions/6370690/media-queries-how-to-target-desktop-tablet-and-mobile*/
 @media (min-width: 320px) {
   /* smartphones, iPhone, portrait 480x320 phones */
   .quiz-wrapper-outer {
@@ -84,7 +91,9 @@ button:hover:enabled {
 
   .quiz-wrapper {
     width: var(--main-width-mobile);
+   
   }
+  
 }
 
 @media (min-width: 641px) {
@@ -94,7 +103,8 @@ button:hover:enabled {
   }
 
   .quiz-wrapper {
-    width: var(--main-width-desktop);
+    /* width: var(--main-width-desktop); */
+    width:80%;
   }
 }
 
@@ -107,4 +117,9 @@ button:hover:enabled {
   .quiz-wrapper {
     width: var(--main-width-desktop);
   }
+}
+@media (max-width: 360px){
+td,th{
+  font-size: x-small;
+}
 }

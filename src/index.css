@@ -19,7 +19,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-/* Add these styles to your CSS file */
 label {
   display: block;
   margin-bottom: 5px;
@@ -62,8 +61,9 @@ label {
 .progress-bar-fill {
   height: 100%;
   border-radius: 5px;
-  background-color: #4caf50; /* Green color for the filled part of the progress bar */
+  background-color: #4caf50; 
 }
+
 @media screen and (max-width: 600px) {
   .progress-bar {
     margin-left: 60px;
